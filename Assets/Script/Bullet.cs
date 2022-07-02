@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    public float speed = 25;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,7 +16,7 @@ public class Bullet : MonoBehaviour
     {
         Vector3 pos = transform.position;
 
-        pos.z += 0.05f;
+        pos.z += speed;
 
         transform.position = pos;
 
@@ -24,7 +25,7 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag=="Enemy")
+        if (other.gameObject.tag == "Enemy")
         {
             other.GetComponent<Enemy>().Damage();
             Destroy(this.gameObject);
