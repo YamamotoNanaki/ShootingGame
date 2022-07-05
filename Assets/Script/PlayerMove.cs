@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerMove : MonoBehaviour
 {
     public float speedSlow = 0.25f;
-    public float speedFast = 1;
+    public float speedFast = 0.25f;
     Vector3 leftBottom;
     Vector3 rightTop;
     float left, right, top, bottom;
